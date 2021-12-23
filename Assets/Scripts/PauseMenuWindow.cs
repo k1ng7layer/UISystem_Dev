@@ -10,17 +10,10 @@ namespace Assets.Scripts
 {
     public class PauseMenuWindow : UIWindow
     {
-        [SerializeField]
-        NavigationButtonPresenter ResumeButton;
+       
 
 
-        public override string Id
-        {
-            get
-            {
-                return "pauseMenu";
-            }
-        }
+        
 
         public override void ActionButtonClicked(ActionButtonPresenter action)
         {

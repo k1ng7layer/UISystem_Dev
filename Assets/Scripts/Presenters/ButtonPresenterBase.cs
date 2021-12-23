@@ -19,8 +19,8 @@ namespace Assets.Interfaces
                 return _id;
             }
         }
-        public abstract event Action<NavigationButtonPresenter> OnClick;
-
+        public virtual event Action<NavigationButtonPresenter> OnClick;
+        public abstract void Click();
 
         public void Close()
         {

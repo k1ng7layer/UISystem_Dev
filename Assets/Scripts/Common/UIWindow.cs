@@ -11,7 +11,17 @@ namespace Assets.Scripts
 {
     public abstract class UIWindow:GUICollection<ButtonPresenterBase>,IDisplayable
     {
-        public abstract string Id { get; }
+        [SerializeField]
+        protected bool isVisibleOnStart;
+        [SerializeField]
+        string _id;
+        public string Id
+        {
+            get
+            {
+                return _id;
+            }
+        }
 
         public abstract void NavigationButtonClicked(NavigationButtonPresenter button);
         public abstract void ActionButtonClicked(ActionButtonPresenter action);

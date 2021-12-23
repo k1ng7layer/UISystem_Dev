@@ -28,20 +28,12 @@ namespace Assets.Scripts
         //public event Action<NavigationButtonPresenter> OnClick;
         public override event Action<NavigationButtonPresenter> OnClick;
 
-        public void Click()
+        public override void Click()
         {
             Debug.Log("Click!");
             OnClick?.Invoke(this);
         }
 
-        public void Close()
-        {
-            
-        }
-
-        public void Open()
-        {
-            
-        }
+        
     }
 }

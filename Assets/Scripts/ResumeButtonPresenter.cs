@@ -1,5 +1,4 @@
 ﻿using Assets.Presenters;
-using Assets.Scripts.Presenters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Assets.Scripts
 {
-    public class OptionsMenuWindow : DefaultMenuPresenter
+    public class ResumeButtonPresenter:ActionButtonPresenter
     {
-        void ApplySettings()
+        public override void Click()
         {
-
+            base.Click();
+            ActionContainer.ResolveAction<GamePauseAction>().Dispatch();
         }
-        
     }
 }

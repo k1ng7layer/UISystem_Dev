@@ -1,18 +1,18 @@
-﻿using Assets.Interfaces;
-using Assets.Scripts;
+﻿using Assets.Presenters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assets.Presenters
+namespace Assets.Scripts
 {
-    public class ActionButtonPresenter : ButtonPresenterBase
+    class ApplySettingsButton:ActionButtonPresenter
     {
         public override void Click()
         {
-            
+            base.Click();
+
         }
     }
 }

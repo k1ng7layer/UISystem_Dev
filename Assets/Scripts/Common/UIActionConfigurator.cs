@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts.Actions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,8 @@ namespace Assets.Scripts
         {
             ActionContainer.AddAction<ButtonClickAction>();
             ActionContainer.AddAction<OpenWindowAction>();
+            ActionContainer.AddAction<GamePauseAction>();
+            ActionContainer.AddAction<ApplySettingsAction>();
         }
     }
 }
