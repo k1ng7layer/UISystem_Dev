@@ -10,15 +10,8 @@ namespace Assets.Scripts
 {
     public class NavigationButtonPresenter:ButtonPresenterBase,INavigationButton 
     {
-        [SerializeField]
-        string _id;
-        public override string Id
-        {
-            get
-            {
-                return _id;
-            }
-        }
+        
+        
 
         [SerializeField]
         string _target;

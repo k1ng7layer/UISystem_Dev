@@ -10,7 +10,15 @@ namespace Assets.Interfaces
 {
     public abstract class ButtonPresenterBase:MonoBehaviour, IDisplayable
     {
-        public abstract string Id { get;}
+        [SerializeField]
+        string _id;
+        public virtual string Id
+        {
+            get
+            {
+                return _id;
+            }
+        }
         public abstract event Action<NavigationButtonPresenter> OnClick;
 
 
