@@ -1,6 +1,8 @@
 ﻿using Assets.Interfaces;
+using Assets.Scripts.Actions;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -8,6 +10,7 @@ namespace Assets.Scripts
     public class WindowLayerPresenter : GUICollection<UIWindow>
     {
         public UIWindow ActiveWindow { get; set; }
+        public UIWindow DefaultWindow { get; set; }
         public override void Init()
         {
             base.Init();
@@ -16,11 +19,12 @@ namespace Assets.Scripts
             {
                 window.Init();
             }
-            ActiveWindow = FindUI("pauseMenu");
+            DefaultWindow = FindUI("pauseMenu");
             CommonActionsSet();
-           
-            
-            
+            ActiveWindow = registeredObjects.Values.FirstOrDefault(x => x.isVisibleOnStart == true);
+
+
+
         }
         void OpenNewWindow(string id)
         {
@@ -29,16 +33,30 @@ namespace Assets.Scripts
             ActiveWindow.Open();
         }
 
-        void CloseActiveWindow()
+       
+
+        void SwitchActiveWindow()
         {
-            ActiveWindow.Close();
+            Debug.Log($"CloseActiveWindow");
+            if (ActiveWindow == DefaultWindow)
+            {
+                ActiveWindow.Close();
+                ActiveWindow = null;
+
+            }
+            else
+            {
+                DefaultWindow.Open();
+                ActiveWindow = DefaultWindow;
+            }
+
         }
 
         //События, применимые ко всем окнам интерфейса.
         void CommonActionsSet()
         {
             ActionContainer.ResolveAction<OpenWindowAction>().AddListener(OpenNewWindow);
-            ActionContainer.ResolveAction<GamePauseAction>().AddListener(CloseActiveWindow);
+            ActionContainer.ResolveAction<SwitchUIStateAction>().AddListener(SwitchActiveWindow);
         }
 
 

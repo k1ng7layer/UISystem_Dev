@@ -16,6 +16,9 @@ namespace Assets.Scripts
             ActionContainer.AddAction<OpenWindowAction>();
             ActionContainer.AddAction<GamePauseAction>();
             ActionContainer.AddAction<ApplySettingsAction>();
+            //ActionContainer.AddAction<UIOpenAction>();
+            //ActionContainer.AddAction<UICloseAction>();
+            ActionContainer.AddAction<SwitchUIStateAction>();
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Assets.Scripts
     public abstract class UIWindow:GUICollection<ButtonPresenterBase>,IDisplayable
     {
         [SerializeField]
-        protected bool isVisibleOnStart;
+        internal bool isVisibleOnStart;
         [SerializeField]
         string _id;
         public string Id

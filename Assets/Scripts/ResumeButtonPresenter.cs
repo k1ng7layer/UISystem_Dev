@@ -1,4 +1,5 @@
 ﻿using Assets.Presenters;
+using Assets.Scripts.Actions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace Assets.Scripts
         public override void Click()
         {
             base.Click();
-            ActionContainer.ResolveAction<GamePauseAction>().Dispatch();
+            ActionContainer.ResolveAction<SwitchUIStateAction>().Dispatch();
         }
     }
 }
