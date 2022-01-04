@@ -59,12 +59,12 @@ namespace Assets.Scripts
             ActionContainer.ResolveAction<SwitchUIStateAction>().AddListener(SwitchActiveWindow);
         }
 
-
-        
     }
         
 
 }
+
+        
        
         
         
