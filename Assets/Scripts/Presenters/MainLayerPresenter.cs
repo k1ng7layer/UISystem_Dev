@@ -8,6 +8,7 @@ namespace Assets.Scripts
     {
         [SerializeField]
         public WindowLayerPresenter windows;
+        public string Id;
         public void Init()
         {
             windows = GetComponentInChildren<WindowLayerPresenter>();

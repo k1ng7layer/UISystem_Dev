@@ -28,6 +28,12 @@ namespace Assets.Scripts
             return default;
         }
 
+        public static void ClearAllBinds()
+        {
+            Actions.Clear();
+        }
+
+
     }
 }
        

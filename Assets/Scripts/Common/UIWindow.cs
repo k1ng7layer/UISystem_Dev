@@ -26,12 +26,12 @@ namespace Assets.Scripts
         public abstract void NavigationButtonClicked(NavigationButtonPresenter button);
         public abstract void ActionButtonClicked(ActionButtonPresenter action);
 
-        public void Close()
+        public virtual void Close()
         {
             this.gameObject.SetActive(false);
         }
 
-        public void Open()
+        public virtual void Open()
         {
             this.gameObject.SetActive(true);
         }
