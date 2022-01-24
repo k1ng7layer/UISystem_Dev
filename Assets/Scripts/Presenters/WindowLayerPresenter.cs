@@ -30,6 +30,7 @@ namespace Assets.Scripts
 
         void OpenNewWindow(string id)
         {
+            Debug.Log($" DefaultWindow = {DefaultWindow}, ActiveWindow = {ActiveWindow}");
             if (ActiveWindow)
                 ActiveWindow.Close();
 
@@ -39,45 +40,39 @@ namespace Assets.Scripts
 
         void SwitchActiveWindow()
         {
-            Debug.Log($"CloseActiveWindow");
+            Debug.Log($" DefaultWindow = {DefaultWindow}, ActiveWindow = {ActiveWindow}");
+
             if (ActiveWindow == DefaultWindow)
             {
+
                 ActiveWindow.Close();
                 ActiveWindow = null;
+                Debug.Log($"CloseActiveWindow, DefaultWindow = {DefaultWindow}, ActiveWindow = {ActiveWindow}");
 
             }
             else
             {
+                Debug.Log($"OpenActiveWindow, DefaultWindow = {DefaultWindow}, ActiveWindow = {ActiveWindow}");
                 DefaultWindow.Open();
                 ActiveWindow = DefaultWindow;
             }
 
         }
 
-        //void OpenDefaultWindow()
-        //{
-        //    DefaultWindow.Open();
-        //    ActiveWindow = DefaultWindow;
-        //}
-
-        //void CloseActiveWindow()
-        //{
-        //    ActiveWindow.Close();
-        //    ActiveWindow = null;
-        //}
-
-
-
-
         //События, применимые ко всем окнам интерфейса.
         void CommonActionsSet()
         {
             ActionContainer.ResolveAction<OpenWindowAction>().AddListener(OpenNewWindow);
             ActionContainer.ResolveAction<SwitchUIStateAction>().AddListener(SwitchActiveWindow);
-
         }
 
+
     }
+        
+
+
+
+
 
 
 

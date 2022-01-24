@@ -30,20 +30,20 @@ namespace Assets.Scripts
             ActionConfigurator = new UIActionConfigurator();
             ActionConfigurator.Configure();
             MainLayer.Init();
-            MainLayer.windows.ActiveWindow = MainLayer.windows.FindUI("pauseMenu");
-
             ActionContainer.ResolveAction<ButtonClickAction>().AddListener(Fire);
-           // ActionContainer.ResolveAction<OpenWindowAction>().AddListener(OpenNewWindow);
         }
-            
-
-       
            
-
-
         private void OnDestroy()
         {
             ActionContainer.ResolveAction<ButtonClickAction>().RemoveListener(Fire);
         }
     }
 }
+
+           
+            
+
+       
+           
+
+

@@ -1,4 +1,5 @@
 ﻿using Assets.Presenters;
+using Assets.Scripts.Presenters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-    public class PauseMenuWindow : UIWindow
+    public class PauseMenuWindow : DefaultMenuPresenter
     {
        
 
